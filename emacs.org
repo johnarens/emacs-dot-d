@@ -166,7 +166,7 @@ https://github.com/alexmurray/flycheck-plantuml
 *** Latex
 **** Inline
 #+BEGIN_SRC emacs-lisp
-  (load-file "~/.emacs.d/latex-overlay.elc")
+  (load-file "~/.emacs.d/latex-overlay.el")
 #+END_SRC
 
 **** Export

@@ -6,4 +6,4 @@
 
 
 ;; Run the elisp code in our main configuration file
-(org-babel-load-file "~/.emacs.d/emacs-debug.org")
+(org-babel-load-file "~/.emacs.d/emacs.org")
