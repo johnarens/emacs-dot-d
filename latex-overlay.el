@@ -2,6 +2,15 @@
 (defvar org-latex-fragment-last nil
   "Holds last fragment/environment you were on.")
 
+;; (defun element-at ()
+;;   (interactive)
+;;   (let* ((el (org-element-at-point))
+;; 	 (el-type (org-element-type el)))
+;;     (if (or (eq 'latex-fragment el-type)
+;; 	    (eq 'latex-environment el-type))
+;; 	(message "True")
+;;       (message "False"))))
+
 (defun org-latex-fragment-toggle ()
   "Toggle a latex fragment image "
   ;; (let* ((el-at-point (org-element-at-point))
@@ -9,7 +18,7 @@
   ;;   "")
   (and (eq 'org-mode major-mode)
        (let* ((el (org-element-context))
-              (el-type (car el)))
+              (el-type (org-element-type el)))
          (cond
 	  ;; not on a fragment and now are not on a fragment
           ((and
