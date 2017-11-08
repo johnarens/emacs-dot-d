@@ -90,6 +90,10 @@ Show open and closing parens.
   (display-time)
 #+END_SRC
 
+** Tabs
+#+BEGIN_SRC emacs-lisp
+  (setq-default indent-tabs-mode nil)
+#+END_SRC
 
 * GNU Global
 #+BEGIN_SRC emacs-lisp
@@ -114,22 +118,6 @@ https://www.emacswiki.org/emacs/InteractivelyDoThings
 #+END_SRC
 
 * Org Mode
-
-#+BEGIN_SRC emacs-lisp
-  (setq org-startup-with-inline-images t)
-  (setq org-file-apps
-        '((auto-mode . emacs)
-          ("\\.x?html?\\'" . "firefox %s")
-          ("\\.pdf\\'" . "evince \"%s\"")
-          ("\\.pdf::\\([0-9]+\\)\\'" . "evince \"%s\" -p %1")
-          ("\\.pdf.xoj" . "xournal %s")))
-  (defun my/fix-inline-images ()
-    (when org-inline-image-overlays
-      (org-redisplay-inline-images)))
-  (add-hook 'org-babel-after-execute-hook 'my/fix-inline-images)
-  ;; (org-display-inline-images t)
-  ;; (add-hook 'org-babel-after-execute-hook'org-display-inline-images)
-#+END_SRC
 
 ** Plant UML
 http://plantuml.com/
@@ -167,6 +155,19 @@ https://github.com/alexmurray/flycheck-plantuml
 **** Inline
 #+BEGIN_SRC emacs-lisp
   (load-file "~/.emacs.d/latex-overlay.el")
+  (setq org-startup-with-inline-images t)
+  (setq org-file-apps
+        '((auto-mode . emacs)
+          ("\\.x?html?\\'" . "firefox %s")
+          ("\\.pdf\\'" . "evince \"%s\"")
+          ("\\.pdf::\\([0-9]+\\)\\'" . "evince \"%s\" -p %1")
+          ("\\.pdf.xoj" . "xournal %s")))
+  (defun my/fix-inline-images ()
+    (when org-inline-image-overlays
+      (org-redisplay-inline-images)))
+  (add-hook 'org-babel-after-execute-hook 'my/fix-inline-images)
+  ;; (org-display-inline-images t)
+  ;; (add-hook 'org-babel-after-execute-hook'org-display-inline-images)
 #+END_SRC
 
 **** Export
