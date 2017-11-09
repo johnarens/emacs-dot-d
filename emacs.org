@@ -64,6 +64,11 @@ some utilities that will help us get organized:
 
 * Startup configuration
 
+** Completion
+#+BEGIN_SRC emacs-lisp
+  (global-auto-complete-mode t)
+#+END_SRC
+
 ** Emacs GUI Display
 Disable welcome screen on startup.
 Free up screen space by getting rid of the toolbar.
